@@ -1,0 +1,6 @@
+{
+	"name": "test mod",
+	"entrypoint": "org.cbigames.testmod.TestMod",
+	"priority": 5,
+	"modid": "test-mod"
+}

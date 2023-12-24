@@ -1,0 +1,6 @@
+{
+	"name": "CRISPR API",
+	"entrypoint": "com.crispr.api.EntryPoint",
+	"priority": 0,
+	"modid": "api"
+}
