@@ -1,0 +1,116 @@
+scale;<nameOverride>;<modleIndexOverride>;<randomize>;<alwaysvisable>;<iconOverride>
+classification
+underwater;overwater;<acceptableHeightOffset>
+subBlueprintCount
+(subBlueprintCount)[minsX;minsY;minsZ;maxX;maxY;maxZ;increaseFactor;<additive>;<lbael>;<extraBoxCNt>;(extraBoxCNt)[minsX;minsY;minsZ;maxX;maxY;maxZ]'
+dataCount;sectionsCount
+(sectionsCount)[VertextCount;colorR;colorG;colorB;<wobbleFactor>
+(vertexCount)[positionX;positionY;positionZ;data1;data2;data3]']]
+componentCount
+(componentCount)[ComponentType;{component specific requiremtns}]
+
+=======END OF BLUEPRINT FORMAT FILE=========
+
+component specific type definitions:
+TRANSFORM;<NONE>
+MESH;<NONE>
+MATERIAL;label(S);hasSecondNatural(B);colorCount(I);(colorCount)[presetName(S);<customR(F)>;<customG(F)>;<customB(F)>];price(I)
+SOUND;<NONE>
+NAME;<NONE>
+INFO;label(S);languageSheetNameID(I);label(S);languageSgeetDescriptionID(I);label;dpCost(I);label(S);baseDpPerMin(I);label(S);roamingRange(I);label(S);placementSound(S)
+LIFE;label(S);averagePop(F);label(S);averageLife(F);label(S);populationFactorCount(I);(populationFactorCount)[populationFactor(F)];label(S);breedMaturity(F);label(S);averageBreedTime(F);label(S);parentId(I);{if parentId>0: label(S);breedCount(I);label(S);requirementCount(I);(requirementCount)[ComponentType;{component specific LOAD requiremtns}]};deathAiType(S);{death ai type specific paramerters};label(S);enviroFactorCount(I);(enviroFactorCount)[label(S);factorID(I,1-6);{factor specific data)];<label(S)>;<defPoints(I)>
+ANIMATION;id(I);height(F);period(F)
+PARTICLES;label(S);isColor(B);label(S);spawnId(I,0-3);{id=0,none|id=1,radius(F)|id=2,length(F);directionX(F);directionY(F);directionZ(F)|id=3,radius(F);normalX(F);normalY(F);normalZ(F)};label(S);pps(F);label(S);sleed(F);label(S);gravity(F);label(S);life(F);label(S);scale(F);(if isColor){colorR(F);colorG(F);colorB(F);label(S);additive(B);label(S);alpha(F);label(S);fadeIn(F);fadeOut(F)}else{label(S);textureAtlasId(I)};label(S);range(F);label(S);stageCount(I);(stageCount)[stage(I)];label(S);takesMaterials(B)
+HEALER;deathAiType(S);{death ai type specific paramerters}
+SPREADER;biomeID(I);colorOffsetR(F);colorOffsetG(F);colorOffsetB(F);strength(F);distance(I)
+MOVEMENT;movementId(I,6-15 21 45);{movemnt mode specific parameters}
+AI;aiProgramType(S);{AI program dependent paramerters}
+EATING;label(S);maxHungerPoints(I);label(S);hungerPerHour(F);label(S);eatingRadius(F);label(S);animationCount(I);(animationCount)[animationid(I)];label(S);dietCount(I);(dietCount)[speciesClassification(S);foodSelectionType(S);animationID(I)];<label(S);runs(B);label(S);aiId(I)>;<label(S);eggStage(B)>
+FOOD;selectionsCount(I);(selectionsCount)[languageSheetNameID(I);foodPoints(I);foodSelectionType(S);{death ai type and parameters dependent on foodSelectionType}];<label(S);effectType(I,0);label(S);pacifyTime(F)>
+FRUITER;label(S);fruitIndex(I);label(S);count(I);<label(S);fruitTime(F)>
+GROWTH;label(S);dynamic(B);label(S);averageGrowthTime(F);label(S);modelStages(I);<{not dynamic}label(S);subStages(I)>
+LILY;none
+RANDOM_SOUNDER;waitTime(F);randomExtra(F);soundCount(I);(soundCount)[soundName(S);range(F)];<label(S);stageReq(I)>;<lebel(S);volume(F)>
+FLEE;first(S);safeRange(F){if first euals TURTLE or MEERKAT stop here};label(S);canBeOnLand(B);label(S);canSwim(B);<label(S);hidingSpotSpeciesClassification(S)>
+FRUIT_FALL;label(S);fruitId(I);label(S);averageFruitTime(F);label(S);spawnHeight(F);label(S);spawnRadius(F)
+DECAY;lifeTime(F)
+BUILD;stageCount(I);maxBuildPoints(I);<label(S);fullyBuiltPoints(I)>
+BUILDER;label(S);buildModelId(I);label(S);buildSpeed(I);label(S);needsPerch(B);label(S);averageBuildTime(F);label(S);buildAgeFactor(F);<label(S);earlyBuildTime(F)>
+HIVE;maxHoney(I);startStage(I);stageCount(I)
+PERCH;positionSlotCount(I);(positionSlotCount)[positionX(F);positionY(F);positionZ(F)]
+BEAVER;none
+EQUIP;label(S);positionCount(I);(positionCount)[label(S);positionX(F);positionY(F);positionZ(F)]
+WOOD;label(S);cutTime(F);label(S);barkFactor(F);label(S);colorR(F);colorG(F);color(B)
+SLEEP;label(S);sleepStartMin(F);label(S);sleepStartMax(F);label(S);sleepEndMin(F);label(S);sleepEndMax(F)
+CHARGE;none
+PANIC;none
+HUNT;label(S);range(I);label(S);preyCount(I);(preyCount)[label(S);speciesClassification(S)];label(S);huntsYoung(B);label(S);huntsOld(B)
+FIGHT;label(S);attackDamage(I);label(S);revenge(B);label(S);animId(I);label(S);biteRange(F);label(S);pauseTime(F)
+DROP;label(S);blueprintID(I)
+ITEM;label(S);decayTime(F)
+NESTING;label(S);speciesClassification(S);label(S);hatchingStage(I);label(S);decreasesModel(B)
+DECOMPOSE;label(S);timePerLoss(F)
+PERCHER;label(S);removeOnRemoval(B)
+FLINGING;label(S);min(F);label(S);max(F)
+CLING;label(S);offsetX(F);offsetY(F);offset(Z);label(S);xRot(F)
+TREE_SWING;label(S);handPosX(F);handPosY(F);handPosZ(F)
+HOSTILE;label(S);averageAttackTime(F);label(S);enemySpeciesClassification(S);label(S);notify(B)
+BEE;none
+FISH_HUNT;none
+PEACOCK;none
+SOUND_LOOPER;label(S);name(S);label(S);range(F);label(S);volume(F)
+SUN_FACER;none
+SPITTING;label(S);spitPosX(F);spitPosY(F);spitPosZ(F)
+PROJECTILE;none
+STINGING;none
+BLOOM;none
+BIRD_HUNT;none
+TONGUE_SHOOT;none
+FLY_TRAP;label(S);startPosX(F);startPosY(F);startPosZ(F)
+BURROW;none
+TIME_OUT;label(S);time(F)
+
+=enviorment factors=
+1 altitude: lable(S);min(I);label(S);max(I);label(S);influence(F)
+2 preferd biome: label(S);growsBarren(B);label(S);biomeCount(I);(biomeCount)[biomeID(I)];label(S);idealFactor(F);label(S);influence(F)
+3 unsutable biome: label(S);biomeCount(I);(biomeCount)[biomeID(I)];label(S);influence(F)
+4 favorite biome: label(S);biomeID(I);label(S);influence(F)
+5 liked species: label(S);speciesCount(I);(speciesCount)[speciesClassification(S)];label(S);influence(F)
+6 disliked species: label(S);speciesCount(I);(speciesCount)[speciesClassification(S)];label(S);influence(F)
+====================
+
+=movement modes=
+6 frog: label(S);speed(F);label(S);bouncePower(F);label(S);waitTime(F);label(S);bounciness(F)
+7 rabbit: label(S);speed(F);label(S);bouncePower(F);label(S);upRotSpeed(F);label(S);downRotSpeed(F);label(S);frontZCount(I);(frontZCount)[frontZ(F)];label(S);backZCount(I);(backZCount)[backZ(F)]
+8 flouncer: label(S);speed(F);label(S);rotSpeed(F);label(S);bouncePower(F);label(S);bounceRotation(F);label(S);standardHeight(F)
+9 rocking: label(S);speed(F);label(S);xRot(I);label(S);minRot(F);label(S);maxRot(F);label(S);rotSpeed(F);<label(S);swimHeight(F)>;<label(S);eggStage(B);label(S);swimFactor(F)>;<label(S);swimInertia(F)>
+10 fly: none
+11 bee: label(S);height(F)
+12 bird: <label(S);glideDown(F)>
+13 gallop: label(S);speed(F);label(S);naturalValue(F);label(S);upRotSpeed(F);label(S);gravityFactor(F);label(S);frontZCount(I);(frontZCount)[frontZ(F)];label(S);backZCount(I);(backZCount)[backZ(F)];<label(S);runFactor(F)>
+14 bounceBase: label(S);speed(F);label(S);rotSpeed(F);label(S);bouncePower(F)
+15 waddle: label(S);speed(F);label(S);rotSpeed(F);label(S);bouncePower(F)
+21 floaty: none
+45 dolphin: labael(S);speed(F);labael(S);xRot(I);labael(S);minRot(F);labael(S);maxRot(F);labael(S);rotSpeed(F)
+================
+
+=death ai=
+FADE_DEATH;fadeTime(F)
+PARTICLE_DEATH;{particle system parameters}
+FALL_DEATH;label(S);fallTime(F);label(S);totalTime(F);label(S);fallenAngle(F);label(S);hasParticleEffect(B);{if hasParticleEffect label(S);explodeTime(F);label(S);useEntityColour(B);{particle system parameters};label(S);particleStageCount(I);(particleStageCount)[particleStage(I)]}
+UP_DOWN_DEATH;label(S);speed(F);{particle system parameters}
+SPAWN_DEATH;entityId(I);minCount(I);maxCount(I);onlyFullGrown(B)
+FLOAT_DEATH;label(S);deadRot(F)
+==========
+
+=AI PROGRAMS=
+PATROL
+SWIM
+BIRD
+WALKING_BIRD
+BEE
+PATROL_WITH_SWIM
+TORTOISE
+MEERKAT
+DOLPHIN
+=============
