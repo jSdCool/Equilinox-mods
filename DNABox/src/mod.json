@@ -1,0 +1,6 @@
+{
+	"name": "DNA box",
+	"entrypoint": "org.cbigames.dnabox.DNABox",
+	"priority": 5,
+	"modid": "cheaty-DP-box"
+}
