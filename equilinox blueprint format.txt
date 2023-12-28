@@ -12,6 +12,7 @@ componentCount
 =======END OF BLUEPRINT FORMAT FILE=========
 
 component specific type definitions:
+
 TRANSFORM;<NONE>
 MESH;<NONE>
 MATERIAL;label(S);hasSecondNatural(B);colorCount(I);(colorCount)[presetName(S);<customR(F)>;<customG(F)>;<customB(F)>];price(I)
@@ -91,7 +92,7 @@ TIME_OUT;label(S);time(F)
 14 bounceBase: label(S);speed(F);label(S);rotSpeed(F);label(S);bouncePower(F)
 15 waddle: label(S);speed(F);label(S);rotSpeed(F);label(S);bouncePower(F)
 21 floaty: none
-45 dolphin: labael(S);speed(F);labael(S);xRot(I);labael(S);minRot(F);labael(S);maxRot(F);labael(S);rotSpeed(F)
+45 dolphin: label(S);speed(F);label(S);xRot(I);label(S);minRot(F);label(S);maxRot(F);label(S);rotSpeed(F)
 ================
 
 =death ai=
@@ -103,14 +104,44 @@ SPAWN_DEATH;entityId(I);minCount(I);maxCount(I);onlyFullGrown(B)
 FLOAT_DEATH;label(S);deadRot(F)
 ==========
 
-=AI PROGRAMS=
-PATROL
-SWIM
-BIRD
-WALKING_BIRD
-BEE
-PATROL_WITH_SWIM
-TORTOISE
-MEERKAT
-DOLPHIN
+=AI PROGRAMS=		note: optional parameters are only optional if at the end of the current line
+PATROL;<label(S);minIdleTime(F);label(S);maxIdleTime(F)>
+SWIM;none
+BIRD;<label(S);circleRot(F);label(S);circleMinTime(F)>
+WALKING_BIRD;label(S);minIdleTime(F);label(S);maxIdleTime(F);label(S);stayOnLand(B)
+BEE;none
+PATROL_WITH_SWIM;<label(S);minIdleTime(F);label(S);maxIdleTime(F)>
+TORTOISE;none
+MEERKAT;<label(S);minIdleTime(F);label(S);maxIdleTime(F)>
+DOLPHIN;none
 =============
+
+
+information:
+label is any string. prefreably that describves the folowing paramerters
+
+S = string paramatere
+I = integer parameter
+F = floating point parameter
+B = boolean parameter (1 or 0)
+
+all color value are floating point between 0 and 1
+
+any paramaters surounded by <> are optional but require everything before them
+parameters szurouded by [] are repaed the number of time spoecified by the value inside of the preceeding ()
+ex: (pCount)[value1(I);value2(F);value3(B)] if pCount is 3 then it turns into value1(I);value2(F);value3(B);value1(I);value2(F);value3(B);value1(I);value2(F);value3(B)
+if the brakets [] covers multiple lines then evey time the contence is repeated it must be placed on a new line
+if the brakets [] cover the entire line of parmeters then evey time the contence is repeated it must be placed on a new line
+if the brakete [] cover only part of a line or are folowed by ' then the contenced are repeaded on the same line
+anything contained inside {} are insrtcions that depend on prevously proveded parameters
+
+all component specific type definitions must be placed entirely on the same line
+
+component specific LOAD requiremtns:
+I can not be fucked to reverse engenere theese. I have no idea what they do
+
+NOTICE: section may not be entirly accurate due to human error in the reverse engenereing process
+especialy the life component that is a mess
+
+people who have contributed to this document:
+jSdCool
