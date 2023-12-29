@@ -10,5 +10,6 @@
 			"modID": "api",
 			"version": ">=1.0.0"
 		}
-	]
+	],
+	"authors": ["jSdCool"]
 }

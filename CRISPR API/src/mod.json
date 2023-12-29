@@ -5,5 +5,6 @@
 	"modid": "api",
 	"version": "1.0.0",
 	"mod_loader_version": ">=1.0.0",
-	"dependencies": []
+	"dependencies": [],
+	"authors": ["jSdCool"]
 }

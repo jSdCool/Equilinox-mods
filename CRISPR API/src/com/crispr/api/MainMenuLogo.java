@@ -11,13 +11,13 @@ import userInterfaces.ScalingImageUi;
 
 public class MainMenuLogo {
 	public final Texture MOD_LOGO;
-	GameMenuGui gameMenu = null;// EquilinoxGuis > GameMenuBackground > GameMenuGui
+	static GameMenuGui gameMenu = null;// EquilinoxGuis > GameMenuBackground > GameMenuGui
 	GuiImage logo;
 	
-	MainMenuLogo(){
+	MainMenuLogo(EntryPoint p){
 		//load the texture from the mod
 		//this must be done on a thread that has an OPENGL context
-		MOD_LOGO = Texture.newTexture(MyModFile.of("api", "mlogo.png")).noFiltering().create();
+		MOD_LOGO = Texture.newTexture(MyModFile.of(p.getInfo().getModID(), "mlogo.png")).noFiltering().create();
 	}
 	
 	/**add the logo for the mod loader to the main menu
@@ -49,7 +49,7 @@ public class MainMenuLogo {
 	
 	/**get a reference to the main menu
 	 */
-	void getMainMenu() {
+	static void getMainMenu() {
 		try {
 			//the reference is buried under 2 private variables
 			//so we need to do reflection to access those variables and get the menu
@@ -73,6 +73,14 @@ public class MainMenuLogo {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	static public GameMenuGui getMainGameMenuGui() {
+		//if we do not have a reference to the main menu
+		if(gameMenu == null) {
+			getMainMenu();//then acquire one (logo)
+		}
+		return gameMenu;
 	}
 
 }
