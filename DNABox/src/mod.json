@@ -2,5 +2,13 @@
 	"name": "DNA box",
 	"entrypoint": "org.cbigames.dnabox.DNABox",
 	"priority": 5,
-	"modid": "cheaty-DP-box"
+	"modid": "cheaty-DP-box",
+	"version": "1.0.0",
+	"mod_loader_version": ">=1.0.0",
+	"dependencies": [
+		{
+			"modID": "api",
+			"version": ">=1.0.0"
+		}
+	]
 }

@@ -2,5 +2,8 @@
 	"name": "CRISPR API",
 	"entrypoint": "com.crispr.api.EntryPoint",
 	"priority": 0,
-	"modid": "api"
+	"modid": "api",
+	"version": "1.0.0",
+	"mod_loader_version": ">=1.0.0",
+	"dependencies": []
 }

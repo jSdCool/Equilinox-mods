@@ -2,5 +2,13 @@
 	"name": "test mod",
 	"entrypoint": "org.cbigames.testmod.TestMod",
 	"priority": 5,
-	"modid": "test-mod"
+	"modid": "test-mod",
+	"version": "1.0.0",
+	"mod_loader_version": ">=1.0.0",
+	"dependencies": [
+		{
+			"modID": "api",
+			"version": ">=1.0.0"
+		}
+	]
 }

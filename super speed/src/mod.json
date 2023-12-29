@@ -2,5 +2,13 @@
 	"name": "Super Speed",
 	"entrypoint": "org.cbigames.superspeed.SuperSpeed",
 	"priority": 5,
-	"modid": "super-speed"
+	"modid": "super-speed",
+	"version": "1.0.0",
+	"mod_loader_version": ">=1.0.0",
+	"dependencies": [
+		{
+			"modID": "api",
+			"version": ">=1.0.0"
+		}
+	]
 }
