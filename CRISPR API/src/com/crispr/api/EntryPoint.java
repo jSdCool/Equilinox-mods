@@ -61,7 +61,11 @@ public class EntryPoint extends ModInitializer implements OnGameLoad, Synchronou
 		}
 	}
 	
+	/**adds the authors of all the mods and the mod loader to the credits screen
+	 */
 	void addCredits() {
+		//the credit screen objects are barried deep under other objects. so we need to do alot of reflection to get at it
+		//GameMenuGui > GuiComponent > CreditsGui > GuiScrollPanel > CreditsPanelGui > CreditsInfo
 		GameMenuGui gameMenuGui = MainMenuLogo.getMainGameMenuGui();
 		try {
 			Field secondaryScreen = GameMenuGui.class.getDeclaredField("secondaryScreen");
@@ -80,13 +84,16 @@ public class EntryPoint extends ModInitializer implements OnGameLoad, Synchronou
 						if(scrollContent instanceof CreditsPanelGui) {
 							Field creditInfoField = CreditsPanelGui.class.getDeclaredField("creditsInfo");
 							creditInfoField.setAccessible(true);
+							
 							//Finally actually get the CreditsInfo object we need to modify
 							CreditsInfo ci = (CreditsInfo) creditInfoField.get(scrollContent);
-							//check if the extra credits have allready been added
+							
+							//check if the extra credits have already been added
 							Field creditsField = CreditsInfo.class.getDeclaredField("credits");
 							creditsField.setAccessible(true);
 							@SuppressWarnings("unchecked")
 							Map<String, String[]> credits = (Map<String, String[]>) creditsField.get(ci);
+							
 							if(credits.get("Mod Loader") == null) {
 								
 								//add the credits

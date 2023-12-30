@@ -89,4 +89,46 @@ public class ModdedBlueprintHelper{
         }
 		
 	}
+	
+	/**add a blueprint to the plant shop
+	 * @param blueprint the blueprint to add
+	 */
+	public static void addBlueprintToPlantShop(Blueprint blueprint) {
+		//get a reference to the plant shop
+		Shop plantShop = GameManager.getShops().getPlantShop();
+		try {
+			//get a way to call the add method because it is private
+			Method addItem = Shop.class.getDeclaredMethod("addItem",Blueprint.class);
+			addItem.setAccessible(true);
+			addItem.invoke(plantShop, blueprint);
+		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		
+		//add blueprint to breeding trees
+
+        LifeCompBlueprint lifeComp = (LifeCompBlueprint)blueprint.getComponent(ComponentType.LIFE);
+        if (lifeComp != null) {
+        	try {
+				Field tSc = BreedingTrees.class.getDeclaredField("totalSpeciesCount");
+				Field bpk = BreedingTrees.class.getDeclaredField("blueprintKeys");
+        		Method newNode = BreedingTrees.class.getDeclaredMethod("createNewTreeNode", Blueprint.class);
+        		tSc.setAccessible(true);
+        		bpk.setAccessible(true);
+        		newNode.setAccessible(true);
+        		
+        		tSc.setInt(GameManager.BREED_TREES,tSc.getInt(GameManager.BREED_TREES)+1);
+        		@SuppressWarnings("unchecked")
+				Map<Blueprint, int[]> blueprintKeys = (Map<Blueprint, int[]>) bpk.get(GameManager.BREED_TREES);
+        		if(!blueprintKeys.containsKey(blueprint)) {
+        			newNode.invoke(GameManager.BREED_TREES, blueprint);
+        		}
+        		
+        	} catch (NoSuchFieldException | SecurityException | NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+        		throw new RuntimeException("Failed to add blueprinty to breed trees ",e);
+        	}
+        	
+        }
+		
+	}
 }
